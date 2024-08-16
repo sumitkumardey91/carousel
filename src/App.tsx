@@ -1,34 +1,75 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+
+import './App.css';
+
+import car1 from '@/assets/car1.jpg';
+import car2 from '@/assets/car2.jpg'; 
+import car3 from '@/assets/car3.jpg'; 
+import car4 from '@/assets/car4.jpg'; 
+import car5 from '@/assets/car5.jpg'; 
+import car6 from '@/assets/car6.jpg'; 
+import car7 from '@/assets/car7.jpg'; 
+import Carousel from './Carousel';
+
+interface Car {
+  title: string,
+  img: string,
+  isActive: boolean,
+  description: string,
+}
+
+const cars: Car[] = [
+   {
+    title: "BMW",
+    img: car1,
+    isActive: false,
+    description: "A car, or an automobile, is a motor vehicle with wheels. Most definitions of cars state that they run primarily on roads, seat one to eight people"
+   },
+   {
+    title: "Benz",
+    img: car2,
+    isActive: false,
+    description: "A car, or an automobile, is a motor vehicle with wheels. Most definitions of cars state that they run primarily on roads, seat one to eight people"
+   },
+   {
+    title: "lamborghini",
+    img: car3,
+    isActive: false,
+    description: "A car, or an automobile, is a motor vehicle with wheels. Most definitions of cars state that they run primarily on roads, seat one to eight people"
+   },
+   {
+    title: "porsche",
+    img: car4,
+    isActive: false,
+    description: "A car, or an automobile, is a motor vehicle with wheels. Most definitions of cars state that they run primarily on roads, seat one to eight people"
+   },
+   {
+    title: "urus",
+    img: car5,
+    isActive: false,
+    description: "A car, or an automobile, is a motor vehicle with wheels. Most definitions of cars state that they run primarily on roads, seat one to eight people"
+   },
+   {
+    title: "lamborghini To Model",
+    img: car6,
+    isActive: false,
+    description: "A car, or an automobile, is a motor vehicle with wheels. Most definitions of cars state that they run primarily on roads, seat one to eight people"
+   },
+   {
+    title: "Luxus",
+    img: car7,
+    isActive: false,
+    description: "A car, or an automobile, is a motor vehicle with wheels. Most definitions of cars state that they run primarily on roads, seat one to eight people"
+   }
+]
 
 function App() {
-  const [count, setCount] = useState(0)
-
+ 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <div className='main'>
+        <Carousel images={cars}></Carousel>
+        <div className="timeRunning"></div>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+       
   )
 }
 
